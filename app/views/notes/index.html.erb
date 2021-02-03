@@ -1,5 +1,8 @@
 
 
 <% @notes.each do |note| %>
-    <%= note.subject_name %>
+    <p><%= note.subject_name %></p>
+    <p><%= note.date %></p>
+    <p><%= note.note_entry %></p>
+
 <% end %>
