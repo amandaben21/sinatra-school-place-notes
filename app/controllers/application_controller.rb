@@ -50,6 +50,7 @@ class ApplicationController < Sinatra::Base
       if !logged_in?
         redirect "/"
       end
+    end
   end
 
 end
