@@ -1,1 +1,21 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+
+<h2>Create Your Class Notes</h2>
+<br>
+
+<form action="/notes" method="post">
+  <label for="subject_name">Subject Name: </label>
+  <input type="text" name="note[subject_name]" id="subject_name" />
+  <br><br>
+  
+  <label for="date">Date: </label>
+  <input type="text" name="note[date]" id="date" />
+  <br><br>
+
+  <label for="note_entry">Notes: </label>
+  <br>
+  <textarea name="note[note_entry]" cols="80" rows="40" id="note_entry"></textarea>
+  <br><br>
+  
+  <input type="submit" value="Save" />
+
+</form>
