@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     erb :"/users/index.html"
   end
 
+  get "/login" do
+    erb :login
+  end
+
   # GET: /users/new
   get "/users/new" do
     erb :"/users/new.html"
