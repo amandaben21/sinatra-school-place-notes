@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   #end
 
   get "/login" do
-    erb :login
+    erb :"/users/login.html"
   end
 
   post "/login" do
@@ -20,6 +20,24 @@ class UsersController < ApplicationController
  
   #Route to signup
   get "/signup" do
+    erb :"/users/signup.html"
+  end
+
+   # GET: /users/5
+   get "/users/:id" do  #User show route
+    @user = User.find_by(id: params[:id])
+
+    erb :"/users/show.html"
+  end
+
+  post "/users" do  #creates the new user and not show the new user then send you to the route of the new user
+    if params[:username] != "" && params[:email] != "" && params[:password]
+      @user = User.create(params)
+      session[:user_id] = @user_id  #actually logging the user in
+      redirect "/users/#{@user.id}" #gets the user url gets a brand new http request,login in the user right away
+    else 
+      redirect "/signup"
+    end
   end
 
   # GET: /users/new
@@ -32,10 +50,7 @@ class UsersController < ApplicationController
     #redirect "/users"
   #end
 
-  # GET: /users/5
-  get "/users/:id" do  #User show route
-    erb :"/users/show.html"
-  end
+ 
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
