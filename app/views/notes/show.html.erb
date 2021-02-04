@@ -1,1 +1,16 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<br>
+<br>
+
+<h3>Note Entry</h3>
+<br>
+Subject: <%= @note.subject_name %>
+<br>
+Date: <%= @note.date %>
+<br>
+Note: <%= @note.note_entry %>
+<a href="/notes/<%= @note.id%>/edit">Edit</a>
+
+<form action="/notes/<%= @note.id %>/delete" method="post">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Note">
+</form>
