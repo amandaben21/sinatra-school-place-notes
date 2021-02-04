@@ -15,6 +15,8 @@
   <br>
   <textarea name="note[note_entry]" cols="80" rows="40" id="note_entry"></textarea>
   <br><br>
+
+  <input type="hidden" name="note[user_id]" value="<%= current_user.id %>">
   
   <input type="submit" value="Create" />
 
