@@ -3,7 +3,7 @@
     
 <h3>Please Edit your Notes</h3>
 
-<form action="/notes" method="post">
+<form action="/notes/<%= @note.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   
   <label for="subject_name">Subject Name: </label>
@@ -16,7 +16,7 @@
 
   <label for="note_entry">Notes: </label>
   <br>
-  <textarea name="note[note_entry]" cols="80" rows="10" id="note_entry"value="<%= @note.note_entry %>" ></textarea>
+  <textarea name="note[note_entry]" cols="80" rows="20" id="note_entry" ><%= @note.note_entry %></textarea>
   <br><br>
   
   <input type="submit" name="submit" value="Save">
