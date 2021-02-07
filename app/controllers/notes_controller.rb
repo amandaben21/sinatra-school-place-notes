@@ -47,6 +47,7 @@ class NotesController < ApplicationController
   end
 
   # PATCH: /notes/5
+  
   patch "/notes/:id" do
     redirect_if_not_logged_in
     find_current_users_note
@@ -56,6 +57,7 @@ class NotesController < ApplicationController
     else
       redirect "/"
     end
+  
   end
 
   # DELETE: /notes/5/delete

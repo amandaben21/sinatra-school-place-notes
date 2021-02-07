@@ -12,6 +12,7 @@ Note: <%= @note.note_entry %>
 <a href="/notes/<%= @note.id%>/edit">Edit</a>
 
 <form action="/notes/<%= @note.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="patch">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Note">
 </form>
