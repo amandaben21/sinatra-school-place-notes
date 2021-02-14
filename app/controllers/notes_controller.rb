@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   # GET: /notes
   get "/notes" do
     redirect_if_not_logged_in
-    @notes = Note.all
+    @notes = current_user.notes
     erb :"/notes/index.html"
   end
 

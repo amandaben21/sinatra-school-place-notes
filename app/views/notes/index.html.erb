@@ -2,7 +2,7 @@
 <ul>
     <% @notes.each do |note| %>
        
-     <li><a href="/notes/<%= note.id%>"><%= note.subject_name %></a></li>
+     <li><a href="/notes/<%= note.id%>"><br><%= note.subject_name %></a></li>
         
     <% end %>
 </ul>
